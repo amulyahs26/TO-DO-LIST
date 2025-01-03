@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App with Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Authentication Container -->
+    <div id="auth-container" class="container1">
+        <div class="img1"></div>
+        <!-- Container for Login and Signup Pages -->
+        <div class="auth-forms-container">
+            <!-- Login Page Container -->
+            <div id="login-page" class="auth-page">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email">
+                <input type="password" id="login-password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+            </div>
+
+            <!-- Signup Page Container -->
+            <div id="signup-page" class="auth-page hidden">
+                <h2>Sign Up</h2>
+                <input type="text" id="signup-username" placeholder="Username">
+                <input type="email" id="signup-email" placeholder="Email">
+                <input type="password" id="signup-password" placeholder="Password">
+                <input type="password" id="signup-confirm-password" placeholder="Confirm Password">
+                <button onclick="signup()">Sign Up</button>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- To-Do App Container -->
+    <div id="todo-container" class="container hidden">
+        <div class="img2"></div>
+        <div class="todo-app">
+            <h1>To-Do List</h1>
+            <div class="navbar">
+                <span id="user-name"></span>
+                <button onclick="logout()">Logout</button>
+            </div>
+            <input type="text" id="new-todo" placeholder="Add a new task...">
+            <button onclick="addTask()">Add Task</button>
+            <div class="filter">
+                <button onclick="setFilter('all')">All</button>
+                <button onclick="setFilter('active')">Active</button>
+                <button onclick="setFilter('completed')">Completed</button>
+            </div>
+            <ul id="todo-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
